@@ -107,7 +107,7 @@
                 if (o.stickySidebar.length == 0) {
                     // Remove <script> tags, otherwise they will be run again when added to the stickySidebar.
                     var javaScriptMIMETypes = /(?:text|application)\/(?:x-)?(?:javascript|ecmascript)/i;
-                    o.sidebar.find('script').filter(function(index, script) {
+                    o.sidebar.find('script').filter(function (index, script) {
                         return script.type.length === 0 || script.type.match(javaScriptMIMETypes);
                     }).remove();
 
@@ -130,16 +130,14 @@
                 if (collapsedTopHeight == 0) {
                     o.stickySidebar.css('padding-top', 0);
                     o.stickySidebarPaddingTop = 0;
-                }
-                else {
+                } else {
                     o.stickySidebarPaddingTop = 1;
                 }
 
                 if (collapsedBottomHeight == 0) {
                     o.stickySidebar.css('padding-bottom', 0);
                     o.stickySidebarPaddingBottom = 0;
-                }
-                else {
+                } else {
                     o.stickySidebarPaddingBottom = 1;
                 }
 
@@ -194,8 +192,7 @@
                         var sidebarSmallerThanWindow = (o.stickySidebar.outerHeight() + offsetTop + offsetBottom) < $(window).height();
                         if (sidebarSmallerThanWindow) {
                             windowOffsetBottom = windowOffsetTop + o.stickySidebar.outerHeight();
-                        }
-                        else {
+                        } else {
                             windowOffsetBottom = $(window).height() - o.marginBottom - o.paddingBottom - options.additionalMarginBottom;
                         }
 
@@ -222,8 +219,7 @@
 
                         if (scrollTopDiff > 0) { // If the user is scrolling up.
                             top = Math.min(top, windowOffsetTop);
-                        }
-                        else { // If the user is scrolling down.
+                        } else { // If the user is scrolling down.
                             top = Math.max(top, windowOffsetBottom - o.stickySidebar.outerHeight());
                         }
 
@@ -236,15 +232,12 @@
 
                         if (!sidebarSameHeightAsContainer && top == windowOffsetTop) {
                             position = 'fixed';
-                        }
-                        else if (!sidebarSameHeightAsContainer && top == windowOffsetBottom - o.stickySidebar.outerHeight()) {
+                        } else if (!sidebarSameHeightAsContainer && top == windowOffsetBottom - o.stickySidebar.outerHeight()) {
                             position = 'fixed';
-                        }
-                        else if (scrollTop + top - o.sidebar.offset().top - o.paddingTop <= options.additionalMarginTop) {
+                        } else if (scrollTop + top - o.sidebar.offset().top - o.paddingTop <= options.additionalMarginTop) {
                             // Stuck to the top of the page. No special behavior.
                             position = 'static';
-                        }
-                        else {
+                        } else {
                             // Stuck to the bottom of the page.
                             position = 'absolute';
                         }
@@ -263,8 +256,7 @@
                             'left': (o.sidebar.offset().left + parseInt(o.sidebar.css('padding-left')) - scrollLeft) + 'px',
                             'top': '0px'
                         });
-                    }
-                    else if (position == 'absolute') {
+                    } else if (position == 'absolute') {
                         var css = {};
 
                         if (o.stickySidebar.css('position') != 'absolute') {
@@ -277,8 +269,7 @@
                         css.left = '';
 
                         o.stickySidebar.css(css);
-                    }
-                    else if (position == 'static') {
+                    } else if (position == 'static') {
                         resetSidebar();
                     }
 
@@ -334,20 +325,19 @@
                 }
             });
         }
-        
+
         function getWidthForObject(object) {
             var width;
-            
+
             try {
                 width = object[0].getBoundingClientRect().width;
+            } catch (err) {
             }
-            catch(err) {
-            }
-            
+
             if (typeof width === "undefined") {
                 width = object.width();
             }
-            
+
             return width;
         }
     }

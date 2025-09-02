@@ -9,11 +9,11 @@
     }
   ],
   "share_target": {
-      "action": "compose",
-      "params": {
-        "title": "title",
-        "text": "text",
-        "url": "url"
+    "action": "compose",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
     }
   },
   "theme_color": "#f9f9f9",

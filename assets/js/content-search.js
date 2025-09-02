@@ -1,31 +1,34 @@
 //关键词sug
 var hotList = 0;
-$(function() {
+$(function () {
     //当键盘键被松开时发送Ajax获取数据
-    $('#search-text').keyup(function() {
+    $('#search-text').keyup(function () {
         var keywords = $(this).val();
-        if (keywords == '') { $('#word').hide(); return };
+        if (keywords == '') {
+            $('#word').hide();
+            return
+        }
+        ;
         $.ajax({
             url: 'https://suggestion.baidu.com/su?wd=' + keywords,
             dataType: 'jsonp',
             jsonp: 'cb', //回调函数的参数名(键值)key
             // jsonpCallback: 'fun', //回调函数名(值) value
-            beforeSend: function() {
+            beforeSend: function () {
                 // $('#word').append('<li>正在加载。。。</li>');
             },
-            success: function(res) {
+            success: function (res) {
                 $('#word').empty().show();
                 hotList = res.s.length;
                 if (hotList) {
                     $("#word").css("display", "block");
-                    for (var i = 0; i < hotList-1; i++) {
-                        if (i===hotList-1){
+                    for (var i = 0; i < hotList - 1; i++) {
+                        if (i === hotList - 1) {
                             $("#word").append('<li id="lastHot"><span>' + (i + 1) + "</span>" + res.s[i] + "</li>");
-                        }
-                        else{
+                        } else {
                             $("#word").append("<li><span>" + (i + 1) + "</span>" + res.s[i] + "</li>");
                         }
-                        $("#word li").eq(i).click(function() {
+                        $("#word li").eq(i).click(function () {
                             $('#search-text').val(this.childNodes[1].nodeValue);
                             window.open(thisSearch + this.childNodes[1].nodeValue);
                             $('#word').css('display', 'none')
@@ -49,11 +52,11 @@ $(function() {
                                 "background": "#ffac38"
                             })
                         }
-                    } 
+                    }
                 } else {
-                        $("#word").css("display", "none")
+                    $("#word").css("display", "none")
                 }
-                    
+
                 /*
                 if (data.s == '') {
                     //$('#word').append('<div class="error">Not find  "' + keywords + '"</div>');
@@ -64,7 +67,7 @@ $(function() {
                     $('#word').append('<li>' + this + '</li>');
                 })*/
             },
-            error: function() {
+            error: function () {
                 $('#word').empty().show();
                 //$('#word').append('<div class="click_work">Fail "' + keywords + '"</div>');
                 $('#word').hide();
@@ -73,16 +76,16 @@ $(function() {
     })
 
     //点击搜索数据复制给搜索框
-    $(document).on('click', '#word li', function() {
+    $(document).on('click', '#word li', function () {
         var word = $(this).text().replace(/^[0-9]/, '');
         $('#search-text').val(word);
         $('#word').empty();
         $('#word').hide();
         //$("form").submit();
-         $('.submit').trigger('click');//触发搜索事件
+        $('.submit').trigger('click');//触发搜索事件
     })
     //$(document).on('click', '.container,.banner-video,nav', function() {
-    $(document).on('click', '.io-grey-mode', function() {
+    $(document).on('click', '.io-grey-mode', function () {
         $('#word').empty();
         $('#word').hide();
     })

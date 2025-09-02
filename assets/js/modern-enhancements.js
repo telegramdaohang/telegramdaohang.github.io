@@ -1,25 +1,25 @@
 // ===== 现代化JavaScript增强 =====
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // 创建滚动指示器
     createScrollIndicator();
-    
+
     // 添加平滑滚动
     enableSmoothScrolling();
-    
+
     // 添加卡片动画
     enableCardAnimations();
-    
+
     // 添加搜索增强
     enhanceSearch();
-    
+
     // 添加导航增强
     enhanceNavigation();
-    
+
     // 添加性能优化
     optimizePerformance();
-    
+
     // 添加无障碍支持
     enhanceAccessibility();
 });
@@ -29,7 +29,7 @@ function createScrollIndicator() {
     const indicator = document.createElement('div');
     indicator.className = 'scroll-indicator';
     document.body.appendChild(indicator);
-    
+
     window.addEventListener('scroll', () => {
         const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
         indicator.style.width = scrolled + '%';
@@ -42,7 +42,8 @@ function enableSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const id = this.getAttribute('href').slice(1);
+            const target = document.getElementById(id);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
@@ -56,7 +57,7 @@ function enableSmoothScrolling() {
 // 启用卡片动画
 function enableCardAnimations() {
     const cards = document.querySelectorAll('.url-card');
-    
+
     // 使用Intersection Observer来触发动画
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -69,7 +70,7 @@ function enableCardAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
-    
+
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
@@ -82,9 +83,9 @@ function enableCardAnimations() {
 function enhanceSearch() {
     const searchInput = document.getElementById('search-text');
     if (!searchInput) return;
-    
+
     // 添加搜索建议
-    searchInput.addEventListener('input', debounce(function() {
+    searchInput.addEventListener('input', debounce(function () {
         const query = this.value.trim();
         if (query.length > 1) {
             showSearchSuggestions(query);
@@ -92,9 +93,9 @@ function enhanceSearch() {
             hideSearchSuggestions();
         }
     }, 300));
-    
+
     // 添加键盘导航
-    searchInput.addEventListener('keydown', function(e) {
+    searchInput.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             hideSearchSuggestions();
             this.blur();
@@ -112,7 +113,7 @@ function showSearchSuggestions(query) {
         '壁纸美图',
         '游戏专区'
     ].filter(item => item.toLowerCase().includes(query.toLowerCase()));
-    
+
     // 创建建议列表
     let suggestionBox = document.getElementById('search-suggestions');
     if (!suggestionBox) {
@@ -121,11 +122,11 @@ function showSearchSuggestions(query) {
         suggestionBox.className = 'search-suggestions';
         document.getElementById('search').appendChild(suggestionBox);
     }
-    
-    suggestionBox.innerHTML = suggestions.map(suggestion => 
+
+    suggestionBox.innerHTML = suggestions.map(suggestion =>
         `<div class="suggestion-item">${suggestion}</div>`
     ).join('');
-    
+
     suggestionBox.style.display = 'block';
 }
 
@@ -146,15 +147,44 @@ function enhanceNavigation() {
             link.classList.add('active');
         }
     });
-    
+
     // 添加移动端导航优化
     if (window.innerWidth <= 768) {
         const sidebarToggle = document.getElementById('sidebar-switch');
         if (sidebarToggle) {
-            sidebarToggle.addEventListener('click', function() {
+            sidebarToggle.addEventListener('click', function () {
                 document.body.classList.toggle('sidebar-open');
             });
         }
+        // 添加遮罩点击关闭功能
+        if (!document.getElementById('sidebar-mask')) {
+            const mask = document.createElement('div');
+            mask.id = 'sidebar-mask';
+            mask.style.position = 'fixed';
+            mask.style.top = '0';
+            mask.style.left = '0';
+            mask.style.right = '0';
+            mask.style.bottom = '0';
+            mask.style.background = 'rgba(0,0,0,0.5)';
+            mask.style.zIndex = '1080';
+            mask.style.display = 'none';
+            document.body.appendChild(mask);
+            mask.addEventListener('click', function () {
+                document.body.classList.remove('sidebar-open');
+                // 强制立即隐藏遮罩，防止 observer 延迟
+                mask.style.display = 'none';
+            });
+        }
+        // observer 只根据 sidebar-open 控制遮罩显示
+        const observer = new MutationObserver(() => {
+            const mask = document.getElementById('sidebar-mask');
+            if (document.body.classList.contains('sidebar-open')) {
+                if (mask) mask.style.display = 'block';
+            } else {
+                if (mask) mask.style.display = 'none';
+            }
+        });
+        observer.observe(document.body, {attributes: true, attributeFilter: ['class']});
     }
 }
 
@@ -172,9 +202,9 @@ function optimizePerformance() {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
-    
+
     // 防抖函数
     function debounce(func, wait) {
         let timeout;
@@ -187,14 +217,15 @@ function optimizePerformance() {
             timeout = setTimeout(later, wait);
         };
     }
-    
+
     // 节流滚动事件
     let ticking = false;
+
     function updateOnScroll() {
         // 滚动相关的更新逻辑
         ticking = false;
     }
-    
+
     window.addEventListener('scroll', () => {
         if (!ticking) {
             requestAnimationFrame(updateOnScroll);
@@ -206,7 +237,7 @@ function optimizePerformance() {
 // 无障碍支持
 function enhanceAccessibility() {
     // 添加键盘导航支持
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         // Ctrl/Cmd + K 聚焦搜索框
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
             e.preventDefault();
@@ -215,7 +246,7 @@ function enhanceAccessibility() {
                 searchInput.focus();
             }
         }
-        
+
         // ESC 关闭模态框
         if (e.key === 'Escape') {
             const modals = document.querySelectorAll('.modal.show');
@@ -225,20 +256,20 @@ function enhanceAccessibility() {
             });
         }
     });
-    
+
     // 添加焦点管理
-    document.addEventListener('focusin', function(e) {
+    document.addEventListener('focusin', function (e) {
         if (e.target.matches('a, button, input, textarea, select')) {
             e.target.classList.add('focused');
         }
     });
-    
-    document.addEventListener('focusout', function(e) {
+
+    document.addEventListener('focusout', function (e) {
         if (e.target.matches('a, button, input, textarea, select')) {
             e.target.classList.remove('focused');
         }
     });
-    
+
     // 添加跳过链接
     const skipLink = document.createElement('a');
     skipLink.href = '#content';
@@ -247,44 +278,25 @@ function enhanceAccessibility() {
     document.body.insertBefore(skipLink, document.body.firstChild);
 }
 
-// 主题切换增强
-function enhanceThemeToggle() {
-    const themeToggle = document.getElementById('yejian');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            // 添加切换动画
-            document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-            
-            // 添加切换音效（可选）
-            const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT');
-            audio.volume = 0.1;
-            audio.play().catch(() => {}); // 忽略可能的错误
-            
-            setTimeout(() => {
-                document.body.style.transition = '';
-            }, 300);
-        });
-    }
-}
 
 // 添加工具提示增强
 function enhanceTooltips() {
     const tooltipElements = document.querySelectorAll('[data-toggle="tooltip"]');
     tooltipElements.forEach(element => {
-        element.addEventListener('mouseenter', function() {
+        element.addEventListener('mouseenter', function () {
             const tooltip = document.createElement('div');
             tooltip.className = 'enhanced-tooltip';
             tooltip.textContent = this.getAttribute('data-original-title') || this.title;
             document.body.appendChild(tooltip);
-            
+
             const rect = this.getBoundingClientRect();
             tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
             tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
-            
+
             setTimeout(() => tooltip.classList.add('show'), 10);
         });
-        
-        element.addEventListener('mouseleave', function() {
+
+        element.addEventListener('mouseleave', function () {
             const tooltip = document.querySelector('.enhanced-tooltip');
             if (tooltip) {
                 tooltip.classList.remove('show');
@@ -295,13 +307,13 @@ function enhanceTooltips() {
 }
 
 // 添加错误处理
-window.addEventListener('error', function(e) {
+window.addEventListener('error', function (e) {
     console.error('页面错误:', e.error);
     // 可以在这里添加错误报告逻辑
 });
 
 // 添加页面可见性API支持
-document.addEventListener('visibilitychange', function() {
+document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
         document.title = '页面已隐藏 - ' + document.title;
     } else {
@@ -318,6 +330,5 @@ window.ModernEnhancements = {
     enhanceNavigation,
     optimizePerformance,
     enhanceAccessibility,
-    enhanceThemeToggle,
     enhanceTooltips
 }; 

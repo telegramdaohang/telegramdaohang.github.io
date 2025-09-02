@@ -26,9 +26,8 @@ body.background-option-1.io-grey-mode .page-container .main-content.grid-bg::bef
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -36,9 +35,8 @@ body.background-option-1.io-grey-mode .page-container .main-content.grid-bg::bef
 body.background-option-2.io-grey-mode .main-content.grid-bg,
 body.background-option-2.io-grey-mode .page-container .main-content.grid-bg {
     background: #f0f8ff !important;
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.15) 2px, transparent 2px),
-        radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.15) 2px, transparent 2px) !important;
+    background-image: radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.15) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.15) 2px, transparent 2px) !important;
     background-size: 50px 50px;
     background-position: 0 0, 25px 25px;
 }
@@ -60,10 +58,9 @@ body.background-option-3.io-grey-mode .page-container .main-content.grid-bg::bef
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -71,11 +68,10 @@ body.background-option-3.io-grey-mode .page-container .main-content.grid-bg::bef
 body.background-option-4.io-grey-mode .main-content.grid-bg,
 body.background-option-4.io-grey-mode .page-container .main-content.grid-bg {
     background: #f0f8ff !important;
-    background-image: 
-        linear-gradient(45deg, rgba(102, 126, 234, 0.12) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(118, 75, 162, 0.12) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(102, 126, 234, 0.12) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(118, 75, 162, 0.12) 75%) !important;
+    background-image: linear-gradient(45deg, rgba(102, 126, 234, 0.12) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(118, 75, 162, 0.12) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(102, 126, 234, 0.12) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(118, 75, 162, 0.12) 75%) !important;
     background-size: 35px 35px;
     background-position: 0 0, 0 17.5px, 17.5px -17.5px, -17.5px 0px;
 }
@@ -100,12 +96,11 @@ body.background-option-6.io-grey-mode .main-content.grid-bg::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 20% 90%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+    background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 20% 90%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -124,18 +119,16 @@ body.background-option-1.io-black-mode .page-container .main-content.grid-bg::be
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
 body.background-option-2.io-black-mode .main-content.grid-bg,
 body.background-option-2.io-black-mode .page-container .main-content.grid-bg {
     background: #1a202c !important;
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.1) 1px, transparent 1px) !important;
+    background-image: radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.1) 1px, transparent 1px) !important;
     background-size: 60px 60px;
     background-position: 0 0, 30px 30px;
 }
@@ -154,20 +147,18 @@ body.background-option-3.io-black-mode .main-content.grid-bg::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(240, 147, 251, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(240, 147, 251, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
 body.background-option-4.io-black-mode .main-content.grid-bg {
     background: #1a202c !important;
-    background-image: 
-        linear-gradient(45deg, rgba(102, 126, 234, 0.1) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(118, 75, 162, 0.1) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(102, 126, 234, 0.1) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(118, 75, 162, 0.1) 75%) !important;
+    background-image: linear-gradient(45deg, rgba(102, 126, 234, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(118, 75, 162, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(102, 126, 234, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(118, 75, 162, 0.1) 75%) !important;
     background-size: 40px 40px;
     background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
 }
@@ -188,20 +179,25 @@ body.background-option-6.io-black-mode .main-content.grid-bg::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.2) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(240, 147, 251, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 10%, rgba(102, 126, 234, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 20% 90%, rgba(118, 75, 162, 0.08) 0%, transparent 40%);
+    background: radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(240, 147, 251, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(102, 126, 234, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 20% 90%, rgba(118, 75, 162, 0.08) 0%, transparent 40%);
     pointer-events: none;
 }
 
 /* 渐变动画 */
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* 响应式优化 */
@@ -211,7 +207,7 @@ body.background-option-6.io-black-mode .main-content.grid-bg::before {
         background-size: 40px 40px;
         background-position: 0 0, 20px 20px;
     }
-    
+
     body.background-option-4.io-grey-mode .main-content.grid-bg,
     body.background-option-4.io-black-mode .main-content.grid-bg {
         background-size: 30px 30px;

@@ -20,9 +20,15 @@
 }
 
 @keyframes gradient-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* 浮动动画 */
@@ -31,9 +37,15 @@
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* 脉冲效果 */
@@ -42,9 +54,15 @@
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* 卡片悬停增强 */
@@ -258,8 +276,12 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* 滚动指示器 */
@@ -280,12 +302,29 @@
     animation-fill-mode: both;
 }
 
-.url-card:nth-child(1) { animation-delay: 0.1s; }
-.url-card:nth-child(2) { animation-delay: 0.2s; }
-.url-card:nth-child(3) { animation-delay: 0.3s; }
-.url-card:nth-child(4) { animation-delay: 0.4s; }
-.url-card:nth-child(5) { animation-delay: 0.5s; }
-.url-card:nth-child(6) { animation-delay: 0.6s; }
+.url-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.url-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.url-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.url-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.url-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.url-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
 
 @keyframes cardAppear {
     from {
@@ -321,11 +360,11 @@
     .url-card {
         animation-delay: 0.1s !important;
     }
-    
+
     .float-animation {
         animation: none;
     }
-    
+
     .pulse {
         animation: none;
     }
@@ -347,11 +386,11 @@
         --gray-600: #000000;
         --gray-700: #000000;
     }
-    
+
     .url-card .url-body {
         border: 2px solid #000000;
     }
-    
+
     .btn {
         border: 2px solid #000000;
     }
@@ -363,13 +402,13 @@
         transform: none;
         box-shadow: none;
     }
-    
+
     .sidebar-nav,
     .page-header,
     #footer-tools {
         display: none;
     }
-    
+
     .main-content {
         margin-left: 0;
     }
@@ -469,7 +508,7 @@
     body.sidebar-open .sidebar-nav {
         transform: translateX(0);
     }
-    
+
     body.sidebar-open::before {
         content: '';
         position: fixed;
@@ -500,14 +539,18 @@
 }
 
 @keyframes loading-shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 /* 活跃状态样式 */
 .active {
-    background: var(--primary-gradient) !important;
-    color: white !important;
+    background: transparent !important;
+    color: inherit !important;
 }
 
 /* 错误状态样式 */

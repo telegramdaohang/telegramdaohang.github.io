@@ -1,3 +1,14 @@
+/* 去除频道导航菜单项的选中背景（首页不高亮） */
+.navbar-nav.site-menu .no-active-bg,
+.navbar-nav.site-menu .no-active-bg:focus,
+.navbar-nav.site-menu .no-active-bg:active,
+.navbar-nav.site-menu .no-active-bg.active,
+.navbar-nav.site-menu .no-active-bg.current {
+    background: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+}
+
 /* ===== 现代化样式优化 ===== */
 
 /* 全局字体和基础样式优化 */
@@ -54,7 +65,7 @@ body, html {
 }
 
 /* 左导航悬浮sidebar-menu-inner宽度调整为90px */
-.sidebar-popup.sidebar-menu-inner > div > ul > li.sidebar-item>ul {
+.sidebar-popup.sidebar-menu-inner > div > ul > li.sidebar-item > ul {
     position: absolute;
     top: 0px;
     left: 10px;
@@ -92,14 +103,14 @@ body, html {
     backdrop-filter: blur(10px);
 }
 
-.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a,
+.big-header-banner:not(.header-bg) .page-header .navbar-nav > li > a,
 .big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item) {
     color: #ffffff;
     font-weight: 500;
     transition: var(--transition);
 }
 
-.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a:hover,
+.big-header-banner:not(.header-bg) .page-header .navbar-nav > li > a:hover,
 .big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item):hover {
     color: var(--primary-color);
     transform: translateY(-1px);
@@ -135,7 +146,7 @@ body, html {
 }
 
 /* 搜索activate图标颜色 */
-.header-big .search-type input:checked+label:before {
+.header-big .search-type input:checked + label:before {
     content: '';
     border-width: 8px 8px 0px 8px;
     border-style: solid;
@@ -287,9 +298,15 @@ footer.main-footer .footer-text a:hover {
 
 /* 渐变动画 - 保留用于其他元素 */
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* 导航 Logo 图标裁剪边角 */
@@ -312,6 +329,7 @@ footer.main-footer .footer-text a:hover {
     overflow: hidden;
     background: white;
     border: 1px solid var(--gray-200);
+    margin-bottom: 1.0rem;
 }
 
 .url-card .url-body:hover {
@@ -514,16 +532,21 @@ footer.main-footer .footer-text a:hover {
         font-size: 2rem;
         margin: 1.5rem 0;
     }
-    
+
+    .header-big.css-color {
+        padding-top: 2.5rem;
+        padding-bottom: 2rem;
+    }
+
     .url-card .url-img {
         width: 40px;
         height: 40px;
     }
-    
+
     .url-card .card-body {
         padding: 1rem;
     }
-    
+
     .header-big .word .wordsub {
         padding: 6px 12px;
         height: 36px;
@@ -733,27 +756,27 @@ footer.main-footer .footer-text a:hover {
 /* 卡片内容终极可读性增强 */
 .url-card .url-body,
 .url-card .url-body * {
-    background: rgba(255,255,255,0.98) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
     color: #222 !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.06) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) !important;
 }
 
 .io-black-mode .url-card .url-body,
 .io-black-mode .url-card .url-body * {
-    background: rgba(30,32,40,0.98) !important;
+    background: rgba(30, 32, 40, 0.98) !important;
     color: #fff !important;
     text-shadow: none !important;
 }
 
 /* 首页推荐卡片背景和字体可读性增强 */
 .header-big .word .wordsub {
-    background: rgba(255,255,255,0.98) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
     color: #222 !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
 }
 
 .io-black-mode .header-big .word .wordsub {
-    background: rgba(30,32,40,0.98) !important;
+    background: rgba(30, 32, 40, 0.98) !important;
     color: #fff !important;
     text-shadow: none !important;
 }
@@ -766,7 +789,7 @@ footer.main-footer .footer-text a:hover {
 .url-card .wordname,
 .url-card .wordsub {
     color: #222 !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.06) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) !important;
 }
 
 .io-black-mode .wordname,
@@ -784,16 +807,16 @@ footer.main-footer .footer-text a:hover {
 .header-big .word .wordsub *,
 .header-big .wordsub,
 .header-big .wordsub * {
-    background: rgba(255,255,255,0.98) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
     color: #222 !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
 }
 
 .io-black-mode .header-big .word .wordsub,
 .io-black-mode .header-big .word .wordsub *,
 .io-black-mode .header-big .wordsub,
 .io-black-mode .header-big .wordsub * {
-    background: rgba(30,32,40,0.98) !important;
+    background: rgba(30, 32, 40, 0.98) !important;
     color: #fff !important;
     text-shadow: none !important;
 }
@@ -828,6 +851,7 @@ body.io-black-mode .wordname {
     color: #222 !important;
     font-weight: bold !important;
 }
+
 .io-black-mode .url-card .url-info strong,
 .io-black-mode .url-card .url-info p {
     color: #fff !important;
@@ -849,6 +873,7 @@ body.io-grey-mode .wordname {
     background: none !important;
     text-shadow: none !important;
 }
+
 body.io-black-mode .wordname {
     color: #fff !important;
     background: none !important;
@@ -999,6 +1024,7 @@ body.io-black-mode .search-type input:checked + label {
     box-shadow: none !important;
     border: none !important;
 }
+
 .bulletin-big::before,
 .bulletin-big::after,
 .bulletin-big .card::before,

@@ -3,93 +3,133 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="robots" content="noindex,follow">
     <link rel="shortcut icon" href="/assets/images/favicon.png">
     <script src="../sw.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7353728415772033" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7431027634092046" crossorigin="anonymous"></script>
     <!--Google Analytics(gtag)-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHVG82T5BT"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RHVG82T5BT');</script>
-    <!--Microsoft Clarity--><script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "fpva872c50");</script>
-    <!--Clicky--><script async src="//static.getclicky.com/101488423.js"></script><noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101488423ns.gif" /></p></noscript>
-    <!--Woopra--><script>!function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");woopra.config({domain: "feijiqun.github.io",outgoing_tracking: true,download_tracking: true,click_tracking: true});woopra.track();</script>
+    <script>window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-RHVG82T5BT');</script>
+    <!--Microsoft Clarity-->
+    <script type="text/javascript">(function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () {
+            (c[a].q = c[a].q || []).push(arguments)
+        };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "fpva872c50");</script>
+    <!--Clicky-->
+    <script async src="//static.getclicky.com/101488423.js"></script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101488423ns.gif"/></p></noscript>
+    <!--Woopra-->
+    <script>!function () {
+        var t, o, c, e = window, n = document, r = arguments, a = "script", i = ["call", "cancelAction", "config", "identify", "push", "track", "trackClick", "trackForm", "update", "visit"], s = function () {
+            var t, o = this, c = function (t) {
+                o[t] = function () {
+                    return o._e.push([t].concat(Array.prototype.slice.call(arguments, 0))), o
+                }
+            };
+            for (o._e = [], t = 0; t < i.length; t++) c(i[t])
+        };
+        for (e.__woo = e.__woo || {}, t = 0; t < r.length; t++) e.__woo[r[t]] = e[r[t]] = e[r[t]] || new s;
+        (o = n.createElement(a)).async = 1, o.src = "https://static.woopra.com/js/w.js", (c = n.getElementsByTagName(a)[0]).parentNode.insertBefore(o, c)
+    }("woopra");
+    woopra.config({domain: "feijiqun.github.io", outgoing_tracking: true, download_tracking: true, click_tracking: true});
+    woopra.track();</script>
     <script>
         if (navigator.serviceWorker != null) {
             navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('Registered events at scope: ', registration.scope);
-            });
+                .then(function (registration) {
+                    console.log('Registered events at scope: ', registration.scope);
+                });
         }
     </script>
     <title>加载中LOADING...</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css"/>
     <link rel="stylesheet" id="custom-css" href="/assets/css/custom-style.css" type="text/css" media="all">
 </head>
 <body>
-	<div class='center-box'>
-		<div class='loader_overlay'></div>
-		<div class='loader_cogs'>
-			<div class='loader_cogs__top'>
-				<div class='top_part'></div>
-				<div class='top_part'></div>
-				<div class='top_part'></div>
-				<div class='top_hole'></div>
-			</div>
-			<div class='loader_cogs__left'>
-				<div class='left_part'></div>
-				<div class='left_part'></div>
-				<div class='left_part'></div>
-				<div class='left_hole'></div>
-			</div>
-			<div class='loader_cogs__bottom'>
-				<div class='bottom_part'></div>
-				<div class='bottom_part'></div>
-				<div class='bottom_part'></div>
-				<div class='bottom_hole'></div>
-			</div>
-		</div>
-		<p class="loading-text">正在唤起Telegram客户端，请稍候<dot>...</dot></p>
-	</div>
-    <!--<div class="box">
-        <div class="box__description">
-            <div class="box__description-container">
-              <div class="box__description-title"><text style="color: rgb(15, 76, 231);">广告招商</text></div>
-              <div class="box__description-text">
-                <img src="/assets/images/logo3.png" width="200px" height="50px">
-              </div>
-            </div>
-            <a href="https://t.me/NewLinkAuditBot" class="box__button" target="_blank"></a>
+<div class='center-box'>
+    <div class='loader_overlay'></div>
+    <div class='loader_cogs'>
+        <div class='loader_cogs__top'>
+            <div class='top_part'></div>
+            <div class='top_part'></div>
+            <div class='top_part'></div>
+            <div class='top_hole'></div>
         </div>
-    </div>-->
+        <div class='loader_cogs__left'>
+            <div class='left_part'></div>
+            <div class='left_part'></div>
+            <div class='left_part'></div>
+            <div class='left_hole'></div>
+        </div>
+        <div class='loader_cogs__bottom'>
+            <div class='bottom_part'></div>
+            <div class='bottom_part'></div>
+            <div class='bottom_part'></div>
+            <div class='bottom_hole'></div>
+        </div>
+    </div>
+    <p class="loading-text">正在唤起Telegram客户端，请稍候
+        <dot>...</dot>
+    </p>
+</div>
+<!--<div class="box">
+    <div class="box__description">
+        <div class="box__description-container">
+          <div class="box__description-title"><text style="color: rgb(15, 76, 231);">广告招商</text></div>
+          <div class="box__description-text">
+            <img src="/assets/images/logo3.png" width="200px" height="50px">
+          </div>
+        </div>
+        <a href="https://t.me/NewLinkAuditBot" class="box__button" target="_blank"></a>
+    </div>
+</div>-->
 </body>
 
 <script type="text/javascript">
-    window.onload=function(){
-    const url = new URL(window.location.href);
+    window.onload = function () {
+        const url = new URL(window.location.href);
 // 获取所有参数
-    const params = new URLSearchParams(url.search);
+        const params = new URLSearchParams(url.search);
 // 获取特定参数的值
-    const username = params.get('username');
-    var jump_url = atob("ZGlhbmJhb3NvdXN1by5jb20=");
-    var domain = window.location.host;
-    document.title = "正在跳转至@" + username + "...";
-    if((domain == jump_url || domain == "localhost:1313") && username)
-    {
-        setTimeout(function()
-        {
-            window.location.href = "https://t.me/" + username;
-        },3000)
-        setTimeout(function(){window.opener=null;window.close();}, 15000);
+        const username = params.get('username');
+        var jump_url = atob("ZGlhbmJhb3NvdXN1by5jb20=");
+        var domain = window.location.host;
+        document.title = "正在跳转至@" + username + "...";
+        if ((domain == jump_url || domain == "localhost:1313") && username) {
+            setTimeout(function () {
+                window.location.href = "https://t.me/" + username;
+            }, 3000)
+            setTimeout(function () {
+                window.opener = null;
+                window.close();
+            }, 15000);
+        } else {
+            Swal.fire({icon: "error", title: "错误", text: "链接参数错误，3秒后返回首页"});
+            setTimeout(function () {
+                window.location.href = "https://" + jump_url;
+            }, 3000);
+        }
+        setTimeout(function () {
+            window.opener = null;
+            window.close();
+        }, 30000);
     }
-    else{
-        Swal.fire({icon: "error",title: "错误",text: "链接参数错误，3秒后返回首页"});
-        setTimeout(function(){window.location.href = "https://"+jump_url;}, 3000);
-    }
-    setTimeout(function(){window.opener=null;window.close();}, 30000);
-}
 </script>
 </html>
